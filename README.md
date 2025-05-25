@@ -1,70 +1,60 @@
-# 🚀 n8n-installer-i9ads
+# n8n Installer - i9ads
 
-**Instalador automático do n8n para servidores Linux.**
+🚀 Instalador automático do n8n no Ubuntu.
 
-Este script permite instalar o **n8n** de forma rápida, prática e interativa. Ele cuida de toda a configuração necessária, desde dependências até variáveis de ambiente, banco de dados e inicialização automática.
+## 📜 Descrição
 
-## ⚙️ Funcionalidades
+Este script realiza a instalação completa do n8n em um servidor Linux (preferencialmente Ubuntu), configurando ambiente, dependências, banco de dados MySQL e serviço em segundo plano.
 
-* Instala a versão mais recente do n8n
-* Configura porta, diretório de instalação e credenciais
-* Permite usar MySQL ou SQLite
-* Cria serviço para iniciar o n8n automaticamente
-* Instala dependências necessárias (Node.js, npm, etc.)
-* Simples, rápido e seguro
+## ⚙️ Como Usar
 
-## 🚀 Como Usar
+### 1. Obter o Instalador
 
-### 1️⃣ Execute no seu servidor Linux (Ubuntu, Debian, CentOS...)
+Execute no seu servidor:
 
-#### Opção rápida (via GitHub):
+bash
+wget -O n8n-installer.sh https://raw.githubusercontent.com/nataoliver/n8n-installer-i9ads/main/n8n-installer.sh
+sudo bash n8n-installer.sh
 
-```bash
-wget -O n8ni https://raw.githubusercontent.com/nataoliver/n8n-installer-i9ads/main/n8n-installer.sh && sudo bash n8ni
-```
+### 2. Seguir as Instruções
 
-### 2️⃣ Siga as instruções na tela
+O script irá perguntar:
 
-O instalador irá perguntar:
+* Diretório de instalação
+* Porta desejada
+* Credenciais de administrador
+* Dados do banco de dados MySQL
 
-* 📂 **Diretório de instalação** (ex.: `/opt/n8n`)
-* 🔐 **Usuário e senha de administrador**
-* 🌐 **Porta para rodar o n8n** (ex.: `5678`)
-* 🗄️ **Banco de dados** (MySQL ou SQLite)
-* ✔️ Confirmações de instalação
+### 3. Acesso
 
-### 3️⃣ Acesso ao n8n
+Após a instalação, acesse o n8n via:
 
-Após a instalação, acesse no navegador:
+http://IP_DO_SERVIDOR:PORTA
 
-http://IP_DO_SEU_SERVIDOR:PORTA
+## 🔒 Requisitos
 
-Use as credenciais que você definiu no processo de instalação.
+* Sistema operacional Linux (Ubuntu recomendado)
+* Acesso root ou sudo
+* Servidor com acesso à internet
 
-## 🔥 Pré-requisitos
+## 📂 Estrutura do Repositório
 
-* ✅ Servidor Linux (Ubuntu, Debian, CentOS, AlmaLinux...)
-* ✅ Acesso root ou sudo
-* ✅ Acesso à internet no servidor
-* 🚫 Não funciona em hospedagens compartilhadas sem SSH
+├── n8n-installer.sh   # Script de instalação
+├── README.md           # Documentação
 
-## 🛠️ Tecnologias usadas
+## 🛠️ Funcionalidades do Script
 
-* Bash Script
-* Node.js
-* n8n
-* MySQL ou SQLite
-* Systemd
+* Instala Node.js, n8n e dependências
+* Configura banco de dados MySQL
+* Cria serviço no systemd
+* Inicia o n8n automaticamente
 
-## 💡 Observações
+## 🚨 Observações
 
-* Este script é fornecido **"como está"**. Use por sua conta e risco.
-* Sempre teste em ambientes controlados antes de produção.
+* Não funciona em hospedagens compartilhadas sem SSH
+* Use apenas em servidores sob seu controle
 
-## 🤝 Contribuição
+## 🙌 Créditos
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-## 🧑‍💻 Autor
-
-Feito com 💙 por **[@nataoliver](https://github.com/nataoliver)**.
+Desenvolvido por [@nataoliver](https://github.com/nataoliver) - i9ads
+www.i9ads.com.br
